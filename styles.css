@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .custom-style {
+        align-items: center;
+        box-sizing: border-box;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        display: flex;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-variant-ligatures: none;
+        font-weight: 400;
+        height: 15px;
+        justify-content: center;
+        letter-spacing: 1px;
+        line-height: 15px;
+        padding-left: 15px;
+        padding-right: 0px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Test</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet"> <!-- Certifique-se de que o caminho está correto -->
+</head>
+
+<body>
+    <header class="flex items-center justify-between p-4 bg-colorHeader">
+        <!-- Logo dentro de uma div e sem afetar o layout -->
+        <div class="ml-[335px] flex-shrink-0">
+            <img src="https://cdn.dooca.store/292/files/logo-studio-geek-160x160.png?v=1656032350" alt="Logo"
+                class="h-[70px] mt-[15px] mb-[15px]">
+        </div>
+
+        <!-- Input de pesquisa -->
+        <div class="search-bar relative flex-grow ml-[220px]">
+            <!-- Input com padding ajustado -->
+            <input type="text" class="w-[642px] h-[40px] py-1 pl-[15px] pr-4 border rounded"
+                placeholder="Olá. o que você procura?">
+
+            <!-- Ícone dentro do input, posicionado no canto esquerdo -->
+            <img src="https://cdn.dooca.store/292/files/luta-cor-preta.png?v=1692968311" alt="Ícone"
+                class="absolute top-2 right-36 h-5 w-5">
+        </div>
+
+        <!-- Ícones de Perfil e Sacola -->
+        <div class="icons flex space-x-8 mr-[390px]">
+            <a href="#" class="icon">
+                <img src="https://cdn.dooca.store/292/files/icone-conta-673x673-preto.png?v=1656531986" alt="Perfil"
+                    class="h-[35px] w-[35px]">
+            </a>
+            <a href="#" class="icon">
+                <img src="https://cdn.dooca.store/292/files/icone-sacola-de-compras-5.png?v=1693399903"
+                    class="h-[35px] w-[35px]" alt="Sacola">
+            </a>
+        </div>
+    </header>
+
+    <!-- Seção com os spans abaixo do header -->
+    <div class=" justify-center flex gap-16  bg-colorHeader w-full pr-32">
+
+        <span class="font-normal custom-style "><a href="#">NOVIDADES</a></span>
+        <span class="font-normal custom-style"><a href="#">CAMISETAS</a></span>
+        <span class="font-normal custom-style"><a href="#">CAMISETAS FEMININAS</a></span>
+        <span class="font-normal custom-style"><a href="#">MOLETOM</a></span>
+        <span class="font-normal custom-style"><a href="#">ACESSORIOS</a></span>
+        <span class="font-normal custom-style"><a href="#">PERSONALIZE</a></span>
+    </div>
+
+
+</body>
+
+</html>
