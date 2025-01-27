@@ -2,180 +2,450 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Test</title>
-    <link href="./styles/output.css" rel="stylesheet">
-    <link href="./styles/styles.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Test - Mobile First</title>
 
-    <script src="./script/script.js"></script>
+    <!-- Estilos do Tailwind (Importe apenas uma versão!) -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!-- Material Icons (Carregando a versão correta) -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet" />
+
+    <!-- Seus estilos personalizados (Deixe isso por último para não serem sobrescritos) -->
+    <link href="./styles/output.css" rel="stylesheet" />
+    <link href="./styles/styles.css" rel="stylesheet" />
+
+    <!-- Seu script JavaScript -->
+    <script src="./script/script.js" defer></script>
+    <!-- Swiper.js (Biblioteca para Carrossel) -->
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
 </head>
 
-<body>
-    <header class="flex items-center justify-between p-4 bg-colorHeader">
-        <!-- Logo dentro de uma div e sem afetar o layout -->
-        <div class="ml-[335px] flex-shrink-0">
-            <img src="https://cdn.dooca.store/292/files/logo-studio-geek-160x160.png?v=1656032350" alt="Logo"
-                class="h-[70px] mt-[15px] mb-[15px]">
+<body class="w-full min-h-screen">
+    <!-- HEADER -->
+    <header class="w-full bg-colorHeader">
+        <div class="flex justify-between items-center  h-28 px-4 lg:px-8 max-w-[1920px] mx-auto">
+            <!-- Botão Menu (Mobile) -->
+            <div class="lg:hidden">
+                <button>
+                    <i class="material-icons">menu</i>
+                </button>
+            </div>
+
+            <!-- LOGO -->
+            <div class="flex items-center justify-center lg:justify-start lg:w-1/3">
+                <img src="https://cdn.dooca.store/292/files/logo-studio-geek-160x160.png?v=1656032350" alt="Logo"
+                    class="h-12 w-auto lg:h-16  lg:ml-60 lg:pl-" />
+            </div>
+
+            <!-- Barra de Pesquisa (corrigida para centralizar no desktop) -->
+            <div class="hidden lg:flex flex-grow justify-center">
+                <div class="relative w-[642px]">
+                    <input type="text" class="w-full h-[40px] py-1 pl-4 border rounded"
+                        placeholder="Olá, o que você procura?" />
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                        <img src="https://cdn.dooca.store/292/files/luta-cor-preta.png?v=1692968311"
+                            alt="Ícone de Pesquisa" class="h-5 w-5" />
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ícones à direita (corrigidos para alinhamento correto) -->
+            <div class="flex items-center space-x-4 lg:w-1/3 lg:justify-start lg:ml-36 gap-2">
+                <!-- Ícone de pesquisa (só aparece no mobile) -->
+                <button class="lg:hidden">
+                    <img src="https://cdn.dooca.store/292/files/luta-cor-preta.png?v=1692968311" alt="Pesquisar"
+                        class="h-6 w-6" />
+                </button>
+
+                <!-- Ícone de perfil -->
+                <a href="#">
+                    <img src="https://cdn.dooca.store/292/files/icone-conta-673x673-preto.png?v=1656531986" alt="Perfil"
+                        class="h-6 w-6 lg:h-9 lg:w-9" />
+                </a>
+
+                <!-- Ícone de Sacola -->
+                <a href="#">
+                    <img src="https://cdn.dooca.store/292/files/icone-sacola-de-compras-5.png?v=1693399903" alt="Sacola"
+                        class="h-6 w-6 lg:h-9 lg:w-9" />
+                </a>
+
+                <!-- Ícone de notificação -->
+                <div class="relative">
+                    <span
+                        class="absolute -top-2 -right-2 text-xs font-bold bg-black text-white rounded-full h-5 w-5 flex items-center justify-center shadow-md">0</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Input de pesquisa -->
-        <div class="search-bar relative flex-grow ml-[220px]">
-            <!-- Input com padding ajustado -->
-            <input type="text" class="w-[642px] h-[40px] py-1 pl-[15px] pr-4 border rounded"
-                placeholder="Olá. o que você procura?">
-
-            <!-- Ícone dentro do input, posicionado no canto esquerdo -->
-            <img src="https://cdn.dooca.store/292/files/luta-cor-preta.png?v=1692968311" alt="Ícone"
-                class="absolute top-2 right-36 h-5 w-5">
-        </div>
-
-        <!-- Ícones de Perfil e Sacola -->
-        <div class="icons flex space-x-8 mr-[390px]">
-            <a href="#" class="icon">
-                <img src="https://cdn.dooca.store/292/files/icone-conta-673x673-preto.png?v=1656531986" alt="Perfil"
-                    class="h-[35px] w-[35px]">
-            </a>
-            <a href="#" class="icon">
-                <img src="https://cdn.dooca.store/292/files/icone-sacola-de-compras-5.png?v=1693399903"
-                    class="h-[35px] w-[35px]" alt="Sacola">
-            </a>
-        </div>
+        <!-- Menu de Navegação (apenas desktop) -->
+        <nav class="hidden lg:flex justify-center bg-colorHeader w-full py-2 gap-8">
+            <a href="#" class="font-normal custom-style">NOVIDADES</a>
+            <a href="#" class="font-normal custom-style">CAMISETAS</a>
+            <a href="#" class="font-normal custom-style">CAMISETAS FEMININAS</a>
+            <a href="#" class="font-normal custom-style">MOLETOM</a>
+            <a href="#" class="font-normal custom-style">ACESSORIOS</a>
+            <a href="#" class="font-normal custom-style">PERSONALIZE</a>
+        </nav>
     </header>
+    <!-- FIM DO HEADER -->
 
-    <!-- Seção com os spans abaixo do header -->
-    <div class=" justify-center flex gap-16  bg-colorHeader w-full pr-32">
-
-        <span class="font-normal custom-style "><a href="#">NOVIDADES</a></span>
-        <span class="font-normal custom-style"><a href="#">CAMISETAS</a></span>
-        <span class="font-normal custom-style"><a href="#">CAMISETAS FEMININAS</a></span>
-        <span class="font-normal custom-style"><a href="#">MOLETOM</a></span>
-        <span class="font-normal custom-style"><a href="#">ACESSORIOS</a></span>
-        <span class="font-normal custom-style"><a href="#">PERSONALIZE</a></span>
+    <!-- HERO (banner rotativo) -->
+    <div class="relative w-full h-60 sm:h-80 md:h-96 overflow-hidden cursor-pointer">
+        <!-- Imagem 1 -->
+        <img src="./images/Screenshot_1.png" alt="Imagem 1"
+            class="absolute w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100"
+            id="image1" />
+        <!-- Imagem 2 -->
+        <img src="./images/Screenshot_3.png" alt="Imagem 2"
+            class="absolute w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0"
+            id="image2" />
     </div>
 
-    <!-- Seção row -->
-    <div class="w-full h-96 relative overflow-hidden cursor-pointer">
-
-
-        <div>
-            <!-- Imagem 1 -->
-            <img src="./images/Screenshot_1.png" alt="Imagem 1"
-                class="absolute w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100"
-                id="image1">
-
-            <!-- Imagem 2 -->
-            <img src="./images/Screenshot_2.png" alt="Imagem 2"
-                class="absolute w-full h-full object-contain transition-opacity duration-1000 ease-in-out opacity-0"
-                id="image2">
-
-        </div>
-
-    </div>
-
-
-    <!-- Icones -->
-
-    <div class="w-full h-auto flex justify-center gap-10  p-10">
-        <!-- Imagem 1 com título e texto -->
-        <div class="flex flex-col items-center">
-            <img src="./images/icone-frete-gratis.webp" alt="Imagem 1" class="w-[200px] h-[200px] object-cover">
+    <!-- ÍCONES DE VANTAGENS -->
+    <div class="flex flex-wrap justify-center gap-8 py-8 px-4">
+        <!-- Item 1 -->
+        <div class="flex flex-col items-center w-32 sm:w-40">
+            <img src="./images/icone-frete-gratis.webp" alt="Imagem 1" class="w-16 h-16 object-cover" />
             <h3 class="text-center mt-2">FRETE GRATIS*</h3>
-            <p class="text-center">Consulte as condiçoes</p>
+            <p class="text-center text-sm">Consulte as condiçoes</p>
         </div>
-
-        <!-- Imagem 2 com título e texto -->
-        <div class="flex flex-col items-center">
-            <img src="./images/icone-desconto-40x40-preto.webp" alt="Imagem 2" class="w-[200px] h-[200px] object-cover">
+        <!-- Item 2 -->
+        <div class="flex flex-col items-center w-32 sm:w-40">
+            <img src="./images/icone-desconto-40x40-preto.webp" alt="Imagem 2" class="w-16 h-16 object-cover" />
             <h3 class="text-center mt-2">DESCONTO AVISTA</h3>
-            <p class="text-center">3% off no Pix ou no Boleto</p>
+            <p class="text-center text-sm">3% off no Pix ou no Boleto</p>
         </div>
-
-        <!-- Imagem 3 com título e texto -->
-        <div class="flex flex-col items-center">
+        <!-- Item 3 -->
+        <div class="flex flex-col items-center w-32 sm:w-40">
             <img src="./images/cartao-de-credito-icone-40x40-preto.webp" alt="Imagem 3"
-                class="w-[200px] h-[200px] object-cover">
-            <h3 class="text-center mt-2">PARCELE NO CARTÃO </h3>
-            <p class="text-center">Até 5x sem juros.</p>
+                class="w-16 h-16 object-cover" />
+            <h3 class="text-center mt-2">PARCELE NO CARTÃO</h3>
+            <p class="text-center text-sm">Até 5x sem juros.</p>
         </div>
-
-        <!-- Imagem 4 com título e texto -->
-        <div class="flex flex-col items-center">
-            <img src="./images/icone-cashback-2.webp" alt="Imagem 4" class="w-[200px] h-[200px] object-cover">
+        <!-- Item 4 -->
+        <div class="flex flex-col items-center w-32 sm:w-40">
+            <img src="./images/icone-cashback-2.webp" alt="Imagem 4" class="w-16 h-16 object-cover" />
             <h3 class="text-center mt-2">CASHBACK</h3>
-            <p class="text-center">Compre e ganhe</p>
+            <p class="text-center text-sm">Compre e ganhe</p>
         </div>
-
-        <!-- Imagem 5 com título e texto -->
-        <div class="flex flex-col items-center">
-            <img src="./images/icone-tamanho40x40-preto.webp" alt="Imagem 5" class="w-[200px] h-[200px] object-cover">
+        <!-- Item 5 -->
+        <div class="flex flex-col items-center w-32 sm:w-40">
+            <img src="./images/icone-tamanho40x40-preto.webp" alt="Imagem 5" class="w-16 h-16 object-cover" />
             <h3 class="text-center mt-2">TAMANHOS GRANDES</h3>
-            <p class="text-center">Até o 4G</p>
+            <p class="text-center text-sm">Até o 4G</p>
         </div>
-
-        <!-- Imagem 6 com título e texto -->
-        <div class="flex flex-col items-center">
-            <img src="./images/icone-troca-40x40-preto.webp" alt="Imagem 6" class="w-[200px] h-[200px] object-cover">
+        <!-- Item 6 -->
+        <div class="flex flex-col items-center w-32 sm:w-40">
+            <img src="./images/icone-troca-40x40-preto.webp" alt="Imagem 6" class="w-16 h-16 object-cover" />
             <h3 class="text-center mt-2">1ª TROCA GRATIS</h3>
-            <p class="text-center">Solicite dentro de 10 dias</p>
+            <p class="text-center text-sm">Solicite dentro de 10 dias</p>
         </div>
     </div>
 
-
-    <div class="flex justify-center items-center mx-auto py-8"
-        style="width: 1377px; height: 863px; max-width: 100%; overflow: hidden;">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <!-- BANNERS EM GRELHA -->
+    <div class="flex justify-center items-center pb-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5 max-w-screen-xl mx-auto">
             <!-- Banner 1 -->
-            <div class="relative overflow-hidden cursor-pointer" style="width: 396px; height: 396px;">
+            <div class="relative overflow-hidden cursor-pointer h-[396px]">
                 <img src="https://cdn.dooca.store/292/files/banner-capa-1.jpg?v=1725882515" alt="Imagem 1"
-                    style="width: 396px; height: 396px; object-fit: cover;">
-                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2">Banner 1</div>
+                    class="w-full h-full object-cover" />
+                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white "></div>
             </div>
             <!-- Banner 2 -->
-            <div class="relative overflow-hidden cursor-pointer" style="width: 396px; height: 396px;">
+            <div class="relative overflow-hidden cursor-pointer h-[396px]">
                 <img src="https://cdn.dooca.store/292/files/banner-home-personalizada.jpg?v=1723811398" alt="Imagem 2"
-                    style="width: 396px; height: 396px; object-fit: cover;">
-                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2">Banner 2</div>
+                    class="w-full h-full object-cover" />
+                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white "></div>
             </div>
             <!-- Banner 3 -->
-            <div class="relative overflow-hidden cursor-pointer" style="width: 396px; height: 396px;">
+            <div class="relative overflow-hidden cursor-pointer h-[396px]">
                 <img src="https://cdn.dooca.store/292/files/banner-capa-3.jpg?v=1725882291" alt="Imagem 3"
-                    style="width: 396px; height: 396px; object-fit: cover;">
-                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2">Banner 3</div>
+                    class="w-full h-full object-cover" />
+                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white "></div>
             </div>
             <!-- Banner 4 -->
-            <div class="relative overflow-hidden cursor-pointer" style="width: 396px; height: 396px;">
+            <div class="relative overflow-hidden cursor-pointer h-[396px]">
                 <img src="https://cdn.dooca.store/292/files/banner-home-moletom-1.jpg?v=1724675936" alt="Imagem 4"
-                    style="width: 396px; height: 396px; object-fit: cover;">
-                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2">Banner 4</div>
+                    class="w-full h-full object-cover" />
+                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white "></div>
             </div>
             <!-- Banner 5 -->
-            <div class="relative overflow-hidden cursor-pointer" style="width: 396px; height: 396px;">
+            <div class="relative overflow-hidden cursor-pointer h-[396px]">
                 <img src="https://cdn.dooca.store/292/files/banner-home-cashback.jpg?v=1723811448" alt="Imagem 5"
-                    style="width: 396px; height: 396px; object-fit: cover;">
-                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2">Banner 5</div>
+                    class="w-full h-full object-cover" />
+                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white "></div>
             </div>
             <!-- Banner 6 -->
-            <div class="relative overflow-hidden cursor-pointer" style="width: 396px; height: 396px;">
+            <div class="relative overflow-hidden cursor-pointer h-[396px]">
                 <img src="https://cdn.dooca.store/292/files/banner-home-acessorios.jpg?v=1723811584" alt="Imagem 6"
-                    style="width: 396px; height: 396px; object-fit: cover;">
-                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2">Banner 6</div>
+                    class="w-full h-full object-cover" />
+                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white "></div>
             </div>
         </div>
     </div>
+
+    <div class="w-full pb-8 text-center">
+        <h2 class="text-2xl font-bold text-gray-800 tracking-wide">ROCK 'N' ROLL</h2>
+    </div>
+
+
+    <!-- Swiper Container -->
+    <div class="swiper-container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper w-[730px]">
+
+                <!-- Camisetas -->
+                <!-- Repita este bloco para as 12 camisetas -->
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 1">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+                <div class="swiper-slide flex justify-center">
+                    <section class="w-[405px] h-[564px]  flex flex-col items-center p-4">
+                        <img class="w-[375px] h-[375px] object-cover"
+                            src="https://cdn.dooca.store/292/products/22z1fatjn4wsuhua0wcd2n3vnbeen75xjpt4_495x495+fill_ffffff+crop_center.jpg?v=1683637667&webp=0"
+                            alt="Camiseta 2">
+                        <!-- Nome da Camiseta -->
+                        <h3 class="mt-4 text-lg font-medium text-gray-800">Camiseta Guitar Project</h3>
+
+                        <!-- Preço à vista no Pix -->
+                        <p class="text-xl font-bold text-black mt-2">R$ 82,35 <span
+                                class="text-base font-normal text-gray-600">no pix</span></p>
+
+                        <!-- Preço parcelado -->
+                        <p class="text-sm text-gray-600 mt-1">
+                            R$ 84,90 em até <span class="font-bold">2x de R$ 42,45</span><br>sem juros
+                        </p>
+                    </section>
+                </div>
+
+
+                <!-- Adicione mais 11 camisetas aqui seguindo o mesmo padrão -->
+            </div>
+
+            <!-- Botões de navegação -->
+            <div class="swiper-button-next text-black"></div>
+            <div class="swiper-button-prev text-black"></div>
+
+            <!-- Paginação opcional -->
+            <div class="swiper-pagination"></div>
+        </div>
     </div>
 
 
 
-
-
-
-
-
-
-
-
-
+</body>
 
 </html>

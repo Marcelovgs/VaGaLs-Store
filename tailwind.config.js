@@ -1,18 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.html", "./script/*.js"], // Aponta para todos os HTML na raiz e todos os JS na pasta script
+  content: ["./*.html", "./script/*.js"],
   theme: {
+    // Screens (breakpoints) padrão do Tailwind
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
-        colorHeader: '#E3E3E3', // Cor personalizada para o header
+        colorHeader: "#E3E3E3",
       },
       spacing: {
-        '15': '15px', // Adicionando padding de 15px
-        '1': '1px',   // Adicionando padding de 1px
-        '500': '500px', // Adicionando altura de 500px
+        15: "15px",
+        1: "1px",
+        500: "500px",
+        90: "17rem",
+
+        200: "33.75rem"
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'], // Adicionando a fonte Montserrat
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+      fontSize: {
+        md32: "32px",
       },
     },
   },

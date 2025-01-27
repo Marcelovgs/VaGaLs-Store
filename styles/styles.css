@@ -24,4 +24,41 @@
         padding-bottom: 20px;
         text-transform: uppercase;
     }
+
+    /* 🔹 Ajuste global para Material Icons - Força tamanho de 32px */
+    .material-icons {
+        font-size: 32px !important;
+        /* Define o tamanho fixo do ícone */
+        width: 32px !important;
+        /* Garante a largura correta */
+        height: 32px !important;
+        /* Garante a altura correta */
+        line-height: 32px !important;
+        /* Ajusta alinhamento */
+        display: inline-block !important;
+        /* Evita conflitos com Tailwind */
+        background: transparent !important;
+        /* Remove qualquer fundo branco */
+    }
+
+    .icons img {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: black !important;
+    }
+
+    .swiper-container {
+        width: 100%;
+        max-width: 1700px;
+        /* Evita que o carrossel fique muito largo em telas grandes */
+    }
+
+    .swiper-container {
+        overflow: visible !important;
+    }
+
 }
