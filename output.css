@@ -603,6 +603,26 @@ video {
   margin-top: 1px;
 }
 
+.ml-36 {
+  margin-left: 9rem;
+}
+
+.mr-20 {
+  margin-right: 5rem;
+}
+
+.mr-24 {
+  margin-right: 6rem;
+}
+
+.mr-36 {
+  margin-right: 9rem;
+}
+
+.mr-28 {
+  margin-right: 7rem;
+}
+
 .flex {
   display: flex;
 }
@@ -1175,5 +1195,25 @@ video {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:pl-40 {
+    padding-left: 10rem;
+  }
+
+  .lg\:pl-56 {
+    padding-left: 14rem;
+  }
+
+  .lg\:pl-20 {
+    padding-left: 5rem;
+  }
+
+  .lg\:pl-15 {
+    padding-left: 15px;
+  }
+
+  .lg\:pl-14 {
+    padding-left: 3.5rem;
   }
 }
