@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 4, // Mostra 4 slides ao mesmo tempo
         spaceBetween: 10, // Pequeno espaço entre os slides
         slidesPerGroup: 4, // Avança 4 slides por vez
-        centeredSlides: true, // Garante que os slides centrais fiquem visíveis com partes laterais
+        centeredSlides: false, // Garante que os slides centrais fiquem visíveis com partes laterais
         centeredSlidesBounds: true, // Mantém os slides alinhados corretamente no início e fim
-        slidesOffsetBefore: 180, // Move os slides um pouco para dentro no início
+        slidesOffsetBefore: 40, // Move os slides um pouco para dentro no início
         slidesOffsetAfter: 40, // Mantém o deslocamento no final
         loop: false, // Desativa o loop para evitar cortes no início
         navigation: {
